@@ -11,7 +11,7 @@ Começamos criando um diretorio no arquivo batch, por exemplo:
 mkdir %1
 ```
 ##
-Deve estar pesando oque significa esse "%1". Em arquivo batch representa o primeiro argumento que você passa ao executar o script. Exemplo:
+Deve estar pesando oque significa esse "%1". Em arquivo batch representa o primeiro argumento que você passa ao executar o script, ou seja, uma  variavel. Exemplo:
 
 Crie um arquivo chamado ola.bat com o seguinte conteúdo:
 ```markdown
@@ -109,13 +109,96 @@ echo.
 - Isso insere uma linha em branco na saída.
 ```
 
-Desativar a Exibição dos Comandos:
-```markdown
-@echo off
+##
 
--Isso impede que os comandos do script sejam exibidos enquanto são executados. 
-O símbolo @ antes do echo off impede que o próprio comando echo off seja exibido.
+O comando set no arquivo batch é usado para definir, exibir ou remover variáveis de ambiente. Exemplos:
+
+```markadown
+set VARIAVEL=valor
+
+- Isso cria uma variável chamada VARIAVEL com o valor valor.
 ```
+
+```markdown
+set VARIAVEL
+
+- Isso mostra o valor da variável VARIAVEL.
+```
+
+```markdown
+set VARIAVEL=
+
+- Isso remove a variável VARIAVEL.
+```
+
+## Explicação da Progamação
+
+A progamaçãoc começa com os seguinte comandos
+
+![](https://cdn.discordapp.com/attachments/1341900461396988094/1341901555833634986/image.png?ex=67b7aeb6&is=67b65d36&hm=fa75cf356d7ab6ee9d43e44db65f9145d77bbb5eb3bf5fda27e630c8efa0a42f&)
+
+Como dito anteriormente o @echo off faz os comandos não aparecer no script. Depois vemos:
+
+```markdown
+IF NOT EXIST "%1"(
+    mkdir "%1"
+)
+cd "1%"
+
+IF NOT EXIST "%1"(
+    mkdir "%1"
+)
+```
+
+Estes comandos conferem se a variaveis realmente foram criadas e se não foram criam a variavel.
+
+##
+
+![](https://cdn.discordapp.com/attachments/1341900461396988094/1341904921892491304/image.png?ex=67b7b1d8&is=67b66058&hm=02ba51e8c535ea788e6b90b43eccdd40edd5d9ce1fb0bb03784499398dbcbffb&)
+
+Este comando como dito anteriormente entra no diretorio criado na pasta. A variavel %1 é o ano e a %2 é os meses.
+
+##
+
+Depois temos progamação para calcular o ano bissexto
+
+![](https://cdn.discordapp.com/attachments/1341900461396988094/1341905754650710088/image.png?ex=67b7b29f&is=67b6611f&hm=acb2d78c042a8efec77970733af013d16724c5165107f02eeae73341de4ff806&)
+
+A seguir esta a explicação de cada linho de codigo:
+
+#### Para calcular o Ano bissexto
+```markdown
+- set /a ano=%1 guarda o ano.
+
+- set /a bissexto=%ano% %% 4 verifica se o ano é divisível por 4.
+
+- set /a seculo=%ano% %% 100 verifica se o ano é divisível por 100.
+
+- set /a quadricentenario=%ano% %% 400 verifica se o ano é divisível por 400.
+```
+
+#### Definir dia do mês
+
+```markdown
+- Para janeiro (if %mes%==1) define 31 dias.
+
+- Para fevereiro (if %mes%==2) define 28 dias.
+```
+
+#### Ajustar Fevereiro para Ano Bissexto
+
+```markdown
+- Se o mês é fevereiro (if %mes%==2), verifica se é ano bissexto.
+
+- Se o ano é divisível por 4 (if %bissexto%==0) e não por 100 (if not %seculo%==0)
+ ou divisível por 400 (else if %quadricentenario%==0), define 29 dias.
+```
+
+
+
+#### Para definir o resto do mês que estão faltando:
+
+![](https://cdn.discordapp.com/attachments/1341900461396988094/1341909332538818632/image.png?ex=67b7b5f4&is=67b66474&hm=a0676800de05e5c1a89ba4f07341f215bde00163891ca8cd97526f4d9af49cbb&)
 
 ##
 
