@@ -202,3 +202,47 @@ A seguir esta a explicação de cada linho de codigo:
 
 ##
 
+![](https://cdn.discordapp.com/attachments/1341900461396988094/1341910420084101200/image.png?ex=67b7b6f7&is=67b66577&hm=5eb19960f16527a1a552573effbbdfc62fe2df9a35600f42107e7a21c218ac14&)
+
+Está progamação como dita anteriomente cria uma linha de texte, A função deste comando é indicar quantos dias tem o mês que escolheu através do arquivo(1 sendo janeiro, 2 sendo fevereiro, 3 sendo março e por assim adiante).
+
+##
+Depois temos a progamação para criar os dias dentro do diretorio %2(A variavel do mês):
+
+![](https://cdn.discordapp.com/attachments/1341900461396988094/1341911462867636234/image.png?ex=67b7b7f0&is=67b66670&hm=01835e0dd775a9bbc8d109a441459c9b124c24b3ed37263e8ed4d120b81eabaa&)
+
+#### Loop para criar pastas:
+```markdown
+- for /L %%i in (1,1,%dias%) diz ao script para começar 
+  em 1 e contar até o valor de %dias%, de um em um.
+
+- %%i é o número atual na contagem.
+```
+
+#### Verificar e Criar Pastas:
+```markdown
+- if not exist %%i verifica se a pasta com o número atual 
+ (%%i) já existe.
+
+- mkdir %%i cria a pasta se ela não existir.
+```
+
+##
+
+Finalizando com um simples comando:
+
+![](https://cdn.discordapp.com/attachments/1341900461396988094/1341912808056553532/image.png?ex=67b7b930&is=67b667b0&hm=9210f961a585523438e2f2c370c5cd42f2c9e4817f5f916b5af4070cf3577947&)
+
+Este comando faz o arquivo batch sair das variaveis do mês e ano, para fazer uma outra ação.
+
+##
+
+# Desafios enfrentados na progamação
+
+No inicio senti uma certa duvida de como fazer um calendario no arquivo batch, devido do meu pouco conhecimento com alguns comandos, entretanto fui tendo ajuda de amigos depois de um tempo comecei a entender aos poucos os comandos realmente fazem e não tendo tanta dificuldade mais.
+
+## 
+
+# Oque aprendi com esta atividade
+
+Nesta atividade aprendi varios comandos uteis para quando for fazer alguma automatização de tarefa como o arquivo batch, que é excelente para fazer tarefas repetitivas como a criação de diretorios, gerenciar arquivos como fazer um backup. Afinal isto pode ser um pequeno passo para quando eu seguir a carreiro de desenvolvimento de sistemas.
