@@ -133,7 +133,7 @@ set VARIAVEL=
 
 ## Explicação da Progamação
 
-A progamaçãoc começa com os seguinte comandos
+A progamação começa com os seguinte comandos
 
 ![](https://cdn.discordapp.com/attachments/1341900461396988094/1341901555833634986/image.png?ex=67b7aeb6&is=67b65d36&hm=fa75cf356d7ab6ee9d43e44db65f9145d77bbb5eb3bf5fda27e630c8efa0a42f&)
 
